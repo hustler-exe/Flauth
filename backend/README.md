@@ -1,32 +1,26 @@
-# backend/README.md
+# Flauth Backend 🧠 - Flask API
 
-```markdown
-# Backend – Flask API
-
-## Tech Stack & Frameworks
-- Flask
-- Flask-CORS
+## 🔧 Tech Stack
+- Python Flask
+- Flask-JWT-Extended
 - Flask-Limiter
 - bcrypt
+- CORS
 
-## Features
-- `/register` endpoint with validation and hashing
-- `/login` endpoint with verification
-- Rate limiting routes and global limits
-- CORS enabled
+## 🔐 Features
+- JWT Auth (Access + Refresh)
+- Brute-force protection
+- Password hashing
+- Modular architecture
 
-## Setup & Usage
-1. `cd backend`
-2. `python3 -m venv venv`
-3. `source venv/bin/activate`
-4. `pip install -r requirements.txt`
-5. `python app.py` (port 5001)
+## 🛠 Setup
 
-## Directory Structure
-````
+# 1. Create venv and activate
+python3 -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
 
-backend/ ├── app.py ├── config.py ├── models.py ├── requirements.txt └── venv/
+# 2. Install dependencies
+pip install -r requirements.txt
 
-```
-```
-
+# 3. Run the server
+python app.py              # or flask run
