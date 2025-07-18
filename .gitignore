@@ -1,0 +1,11 @@
+# .gitignore (root level)
+.DS_Store
+*.log
+.env
+*.env
+.vscode/
+*.sqlite
+*.bak
+*.zip
+*.tar.gz
+*.tgz

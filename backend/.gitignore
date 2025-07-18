@@ -1,0 +1,32 @@
+# Ignore virtual environment folder
+venv/
+
+# Ignore Python bytecode cache folders
+__pycache__/
+*.py[cod]
+
+# Ignore environment variable files if any
+.env
+
+# Ignore IDE/editor config files
+.vscode/
+.idea/
+
+# Ignore system files
+.DS_Store
+
+# Ignore logs
+*.log
+
+# Ignore Python egg-info
+*.egg-info/
+
+# Ignore coverage reports
+htmlcov/
+.coverage
+
+# Ignore pytest cache
+.pytest_cache/
+
+# Ignore pip cache
+pip-log.txt
