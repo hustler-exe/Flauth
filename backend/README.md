@@ -1,26 +1,60 @@
-# Flauth Backend 🧠 - Flask API
+<h1>Flauth Backend</h1>
 
-## 🔧 Tech Stack
-- Python Flask
-- Flask-JWT-Extended
-- Flask-Limiter
-- bcrypt
-- CORS
+<p>This is the Flask backend for <strong>Flauth</strong>, handling secure user authentication, session management, and API endpoints for the frontend.</p>
 
-## 🔐 Features
-- JWT Auth (Access + Refresh)
-- Brute-force protection
-- Password hashing
-- Modular architecture
+<h2>🧰 Tech Stack</h2>
+<ul>
+  <li>Flask</li>
+  <li>bcrypt</li>
+  <li>flask-cors</li>
+  <li>flask-limiter</li>
+  <li>JWT (JSON Web Token)</li>
+</ul>
 
-## 🛠 Setup
+<h2>📁 Folder Structure</h2>
+<pre><code>backend/
+├── app.py
+├── auth/
+│   ├── routes.py
+│   ├── models.py
+│   └── utils.py
+├── .env
+├── requirements.txt
+└── README.md
+</code></pre>
 
-# 1. Create venv and activate
-python3 -m venv venv
-source venv/bin/activate   # Windows: venv\Scripts\activate
+<h2>⚙️ Setup</h2>
+<ol>
+  <li>Create a virtual environment:
+    <pre><code>python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows</code></pre>
+  </li>
+  <li>Install dependencies:
+    <pre><code>pip install -r requirements.txt</code></pre>
+  </li>
+  <li>Run the server:
+    <pre><code>python app.py</code></pre>
+  </li>
+</ol>
 
-# 2. Install dependencies
-pip install -r requirements.txt
+<h2>🔐 Features</h2>
+<ul>
+  <li>Secure password hashing (bcrypt)</li>
+  <li>JWT token generation and verification</li>
+  <li>Brute-force attack protection with Flask-Limiter</li>
+  <li>Cross-origin support with Flask-CORS</li>
+</ul>
 
-# 3. Run the server
-python app.py              # or flask run
+<h2>📄 Environment Variables</h2>
+<pre><code>SECRET_KEY=your-secret-key
+JWT_EXPIRY=3600</code></pre>
+
+<h2>📌 Endpoints</h2>
+<ul>
+  <li><code>POST /register</code> – Create a new user</li>
+  <li><code>POST /login</code> – Authenticate user and return JWT</li>
+  <li><code>GET /protected</code> – Example protected route</li>
+</ul>
+
+<h2>📄 License</h2>
+<p>MIT</p>
