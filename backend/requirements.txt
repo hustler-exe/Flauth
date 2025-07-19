@@ -2,3 +2,4 @@ Flask
 bcrypt
 flask-limiter
 flask-cors
+python-dotenv

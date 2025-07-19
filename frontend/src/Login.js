@@ -16,7 +16,10 @@ function Login() {
     try {
       const response = await api.post('/login', { email, password });
       setMessage(response.data.message);
-      if (response.status === 200) navigate('/dashboard');
+      if (response.status === 200) {
+        localStorage.setItem('token', response.data.token); // ✅ Store token
+        navigate('/dashboard'); // ✅ Redirect after login
+      }
     } catch (err) {
       if (err.response) {
         if (err.response.status === 429) {
