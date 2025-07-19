@@ -5,6 +5,10 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from models import create_user, verify_user
 from config import SECRET_KEY
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = SECRET_KEY
@@ -54,4 +58,5 @@ def login():
     return jsonify({'message': message}), 200
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    # Local dev server
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
