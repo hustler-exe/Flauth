@@ -1,7 +1,13 @@
 // frontend/src/api.js
 import axios from 'axios';
 
-export default axios.create({
-  baseURL: 'http://127.0.0.1:5001',
-  withCredentials: true
+console.log("🔗 Using API Base URL:", process.env.REACT_APP_API_BASE_URL);
+
+const API = axios.create({
+  
+  baseURL: process.env.REACT_APP_API_BASE_URL,
+  
+  withCredentials: true,
 });
+
+export default API;
