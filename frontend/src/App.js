@@ -17,7 +17,34 @@ function App() {
 
   return (
     <>
-      <div style={{ textAlign: 'right', padding: '10px' }}>
+      {/* Header */}
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          padding: '12px 24px',
+          backgroundColor: darkMode ? '#1e1e1e' : '#ffffff',
+          position: 'sticky',
+          top: 0,
+          zIndex: 100,
+          boxShadow: darkMode
+            ? '0 1px 2px rgba(0, 0, 0, 0.4)'
+            : '0 1px 2px rgba(0, 0, 0, 0.08)',
+        }}
+      >
+        <h1
+          style={{
+            margin: 0,
+            fontSize: '24px',
+            fontWeight: '600',
+            color: darkMode ? '#90caf9' : '#1976d2',
+            fontFamily: 'Segoe UI, Roboto, sans-serif',
+          }}
+        >
+          Flauth
+        </h1>
+
         <button
           onClick={() => setDarkMode(!darkMode)}
           style={{
@@ -25,42 +52,35 @@ function App() {
             border: 'none',
             color: darkMode ? '#eeeeee' : '#000000',
             cursor: 'pointer',
-            fontSize: '32px',
+            fontSize: '28px',
             padding: '6px 12px',
             borderRadius: '6px',
-            outline: 'none',
-            boxShadow: 'none',
             transition: 'background 0.2s ease',
           }}
-          onMouseEnter={e => {
-            e.target.style.background = 'transparent';
-            e.target.style.outline = 'none';
-            e.target.style.boxShadow = 'none';
-          }}
-          onFocus={e => {
-            e.target.style.outline = 'none';
-            e.target.style.boxShadow = 'none';
-          }}
+          title={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
         >
           {darkMode ? '☀️' : '🌙'}
         </button>
       </div>
 
-      <Routes>
-        <Route path="/" element={<Navigate to="/login" replace />} />
-        <Route path="/login" element={<Login darkMode={darkMode} />} />
-        <Route path="/register" element={<Register darkMode={darkMode} />} />
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard darkMode={darkMode} />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="*" element={<Navigate to="/login" replace />} />
-      </Routes>
+      {/* Page Content */}
+      <div style={{ padding: '24px' }}>
+        <Routes>
+          <Route path="/" element={<Navigate to="/login" replace />} />
+          <Route path="/login" element={<Login darkMode={darkMode} />} />
+          <Route path="/register" element={<Register darkMode={darkMode} />} />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard darkMode={darkMode} />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="*" element={<Navigate to="/login" replace />} />
+        </Routes>
+      </div>
     </>
   );
 }
